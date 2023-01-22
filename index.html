@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MediAI Marketing Agency</title>
+    <style>
+        /* Sticky header styles */
+        #header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 9999;
+    height: 80px;
+}
+
+        
+        /* Navigation menu styles */
+        #header nav {
+          display: flex;
+          justify-content: space-between;
+        }
+        #header nav a {
+          color: #fff;
+          text-decoration: none;
+          padding: 10px;
+          font-size: 18px;
+        }
+        #header nav a:hover {
+          background-color: #555;
+        }
+
+        /* Home section styles */
+      #home {
+        height: 512px;
+        background-color: red;
+      }
+
+      .image-container {
+        overflow: hidden; 
+        height: 512px;
+        }
+
+        .text-overlay {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        font-size: 50px;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        }
+        img {
+            width: 100%;
+        }
+
+        .text-overlay p {
+        font-size: 20px;
+        margin-top: 5px;
+        }
+
+        .text-overlay h2, .text-overlay p {
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+
+        #about-us {
+  background-color: #f9f9f9; /* you can use any color that fits your website's palette*/
+}
+
+.section {
+  margin-top: 60px; /* change this value to the height of your header */
+}
+
+
+.section-title {
+  color: #333; /* you can use any color that fits your website's palette*/
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-text {
+  color: #666; /* you can use any color that fits your website's palette*/
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: justify;
+  margin-bottom: 30px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 10px #ccc;
+  flex: 1;
+    margin: 0 20px;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.bullet-points {
+  list-style-type: square;
+  margin-left: 20px;
+}
+
+.package-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.card-expand {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem 0;
+}
+
+.footer-links a {
+    color: #fff;
+    margin-right: 1rem;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.social-links a:hover {
+    color: #0077B5;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+p {
+    margin: 0;
+}
+
+
+    </style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    let lastExpandedCard = null;
+
+function expandCard(event) {
+const card = event.currentTarget.parentNode;
+const expand = card.querySelector(".card-expand");
+
+if (lastExpandedCard && lastExpandedCard !== expand) {
+    lastExpandedCard.style.maxHeight = "0";
+}
+
+expand.style.maxHeight = expand.scrollHeight + "px";
+lastExpandedCard = expand;
+}
+
+// Get the height of the header
+var headerHeight = $("#header").outerHeight();
+      
+      $(document).on("click", "a[href^='#']", function (event) {
+          event.preventDefault();
+          $("html, body").animate({
+              scrollTop: $($.attr(this, "href")).offset().top - headerHeight
+          }, 500);
+      });
+
+
+
+</script>
+    
+  </head>
+  <body>
+    <header id="header">
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about-us">About Us</a>
+        <a href="#packages">Packages</a>
+        <a href="#contact-us">Contact Us</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="section">
+        <div class="image-container">
+            <img src="img/home.jpeg" alt="image">
+            <div class="text-overlay">
+              <h2>MediAI</h2>
+              <p>Empowering brands to thrive in the digital age</p>
+            </div>
+          </div>
+          
+      </section>
+
+      <section id="about-us" class="section">
+        <div class="about-container">
+          <h2 class="section-title">About Us</h2>
+          <p class="section-text">
+          At MediAI, we are dedicated to helping both individual influencers and brands elevate their online presence through cutting-edge social media strategies. Our team of experts stays on top of the latest industry standards and cultural trends to ensure that our clients are always ahead of the game.
+          </p>
+          <p class="section-text">
+          We understand the importance of building a strong personal brand and we take pride in our ability to help individual influencers grow their following and monetize their platforms. But we don't stop there, we also work with brands to help them reach their target audience and increase their online visibility.
+          </p>
+          <p class="section-text">
+          Our clients have seen a significant increase in engagement and ROI thanks to our data-driven approach and personalized campaigns. We are proud of our track record of success and are constantly striving to exceed our clients' expectations.
+          </p>
+          <p class="section-text">
+          Our team of professionals is committed to delivering results in a timely and efficient manner. We understand the importance of meeting deadlines and staying within budget. We always make sure our clients are informed and involved every step of the way.
+          </p>
+          <p class="section-text">
+          At MediAI, we are passionate about helping our clients succeed and we are always looking for new and innovative ways to do so. Trust us to take your online presence to the next level.
+          </p>
+        </div>
+      </section>
+      
+
+      <section id="packages" class="section">
+        <h2 class="section-title">Packages</h2>
+        <div class="package-container">
+          <div class="card influencers-card">
+            <div class="card-title" onclick="expandCard(event)">Influencers</div>
+            <ul class="bullet-points">
+              <li>Personalized social media strategy</li>
+              <li>Content creation and curation</li>
+              <li>Engagement and growth tactics</li>
+              <li>Monetization opportunities</li>
+            </ul>
+            <div class="card-expand">
+              <p>Our influencer package is designed to help you grow your following, increase engagement and monetize your platforms. Our team of experts will work with you to create a personalized social media strategy, curate and create high-quality content, and implement tactics to boost engagement and growth. We'll also explore monetization opportunities and help you capitalize on them.</p>
+            </div>
+          </div>
+          <div class="card brands-card">
+            <div class="card-title" onclick="expandCard(event)">Brands</div>
+            <ul class="bullet-points">
+              <li>Target audience research</li>
+              <li>Customized social media campaigns</li>
+              <li>Influencer partnerships</li>
+              <li>Analytics and reporting</li>
+            </ul>
+            <div class="card-expand">
+              <p>Our brand package is tailored to help businesses increase their online visibility and reach their target audience. We'll conduct research to identify your target audience and develop customized social media campaigns to engage them. We'll also explore influencer partnerships and implement tactics to boost engagement and growth. We'll provide analytics and reporting to track progress and make informed decisions.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+
+      <section id="contact-us" class="section">
+        <h2 class="section-title">Contact Us</h2>
+        <p>Ready to take your social media game to the next level? Let's make it happen! Get in touch with us today and let's discuss how MediAI can help you achieve your goals. Don't wait any longer, send us an email and let's get started!</p>
+        <a href="mailto:info@mediai.com" class="btn">Send us an email</a>
+      </section>
+      
+    </main>
+
+    <footer>
+        <div class="container">
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about-us">About Us</a>
+            <a href="#packages">Packages</a>
+            <a href="#contact-us">Contact Us</a>
+          </div>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <p>Copyright &copy; MediAI 2022</p>
+        </div>
+      </footer>
+      
+
+
+  </body>
+</html>
